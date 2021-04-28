@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Electron Notifications Test</title>
+    </head>
+    <body>
+        <h1>Test</h1>
+        <form>
+            <button type="submit">Push Notification</button>
+        </form>
+
+        <script>
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                window.api.send('toMain', 'push:notif')
+            })
+
+            // const electron = require('electron');
+            // const {ipcRenderer} = electron;
+
+            // const form = document.querySelector('form');
+            // form.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            //     ipcRenderer.send('pushNotif')
+            // })
+        </script>
+    </body>
+</html>
